@@ -1,0 +1,140 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+/* nav */
+nav{
+    width: 100%;
+position: fixed;
+top: 0;
+left: 0;
+background-color: antiquewhite;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+padding: 20px;
+gap: 20px;
+}
+nav > a:hover{
+    text-decoration: underline;
+
+}
+.navIcon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#menu{
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+#menu::after{
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: -7px;
+    content: "";
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s;
+}
+#menu:hover:after{
+    opacity: 1;
+}
+#menu::before{
+    /* aria 값 사용 */
+    content: attr(aria-label);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+position: absolute;
+top: 40px;
+left: 50%;
+transform: translateX(-50%);
+padding: 10px;
+font-size: 12px;
+opacity: 0;
+transition: all 0.3s;
+/* 텍스트 줄바꿈 방지 */
+white-space: nowrap;
+border-radius: 3px;
+
+}
+#menu:hover:before{
+    opacity: 1;
+}
+#menu svg{
+    position: relative;
+    width: 100%;
+    opacity: 0.5;
+}
+/* 로그인 */
+#login{
+    width: 70px;
+    height: 30px;
+  color: white;
+  background-color: #4484f3;
+  border: 0;
+  border-radius: 3px;
+}
+.main-wrap{
+ margin-top: 200px;
+ text-align: center;
+ 
+}
+/* 검색바 */
+.search_bar{
+    width: 70%;
+    max-width: 560px;
+    min-width: 330px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    padding: 10px 25px;
+}
+.search_bar i{
+
+}
+.search_bar input{
+    width: 60%;
+    padding: 5px;
+    border: 0;
+    outline: none;
+}
+.search-icon{
+    width: 10%;
+    min-width: 48px;
+    display: flex;
+    gap: 5px;
+}
+.search-icon a{
+    width: calc(100% / 2);
+
+}
+.search-icon a img{
+    width: 100%;
+}
+/* 반응형 */
+@media screen and (max-width:390px) {
+    .search_bar {
+        padding: 5px 15px;
+    }
+    
+}
